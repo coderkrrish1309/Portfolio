@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krish's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #fff;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+      color: white;
+      padding: 10px 30px;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      z-index: 999;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #4e46ff;
+      color: #000;
+      border-radius: 20px;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .profile-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 30px;
+}
+
+.bubble-animation {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.profile-image {
+  width: 1500%;
+  height: 112%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #5c6eff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Bubble styles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(45, 59, 167);
+  z-index: 1;
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Different positions and sizes */
+.b1 {
+  width: 25px;
+  height: 25px;
+  top: -10px;
+  left: -20px;
+  animation-delay: 0s;
+}
+.b2 {
+  width: 15px;
+  height: 15px;
+  bottom: -10px;
+  right: -15px;
+  animation-delay: 2s;
+}
+.b3 {
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: -25px;
+  animation-delay: 1s;
+}
+.b4 {
+  width: 18px;
+  height: 18px;
+  bottom: 0;
+  left: -25px;
+  animation-delay: 3s;
+}
+.b5 {
+  width: 12px;
+  height: 12px;
+  top: -15px;
+  right: 20px;
+  animation-delay: 4s;
+}
+
+.b6 {
+  width: 12px;
+  height: 12px;
+  top: -15px;
+  left: 20px;
+  animation-delay: 4s;
+}
+
+.b7 {
+  width: 12px;
+  height: 12px;
+  top: -15px;
+  right: 20px;
+  animation-delay: 4s;
+}
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+}
+
+
+
+
+
+    .bubbles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bubbles span {
+      position: absolute;
+      display: block;
+      width: 60px;
+      height: 60px;
+      background: rgba(53, 25, 118, 0.2);
+      border-radius: 50%;
+      animation: bubble 20s linear infinite;
+    }
+
+    .bubbles span:nth-child(1) { left: 20%; animation-delay: 0s; }
+    .bubbles span:nth-child(2) { left: 50%; animation-delay: 1s; }
+    .bubbles span:nth-child(3) { left: 80%; animation-delay: 2s; }
+    .bubbles span:nth-child(4) { left: 100%; animation-delay: 3s; }
+    .bubbles span:nth-child(5) { left: 120%; animation-delay: 4s; }
+    
+
+    @keyframes bubble {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-1000px) scale(0.5); }
+    }
+
+    .intro {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .intro h1 {
+      font-size: 3rem;
+      color: #000;
+    }
+
+    .intro h1 span {
+      color: #4e46ff;
+    }
+
+    .intro p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .intro img {
+      width: 300px;
+      border-radius: 50%;
+      border: 4px solid #4e46ff;
+      margin-top: 20px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: #4e46ff;
+    }
+
+    .card-container {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px;
+      border: 2px solid #4e46ff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      color: #000;
+      background-color: #fff;
+    }
+
+    .glass-card:hover {
+      transform: scale(1.05);
+    }
+
+    .glass-card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .glass-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .glass-card p {
+      font-size: 0.95rem;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      border: 2px solid #4e46ff;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      
+      margin-bottom: 20px;
+    }
+
+    .testimonial-card p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .testimonial-container {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #1a1a1a;
+  padding: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.left-panel {
+  flex: 1;
+}
+
+.left-panel h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.left-panel p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.email-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.email-box a {
+  text-decoration: none;
+  color: #4e46ff;
+  font-weight: 600;
+}
+
+.right-panel {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.right-panel h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #4e46ff;
+  outline: none;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+form button {
+  background: #4e46ff;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 14px rgba(78, 70, 255, 0.3);
+}
+
+form button:hover {
+  background: #3d38cc;
+}
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#Contact">Contact</a>
+</nav>
+
+<header id="home">
+  <div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="intro">
+    <h1>Hello, I'm <span>Krish</span><br/>Ui/Ux Designer</h1>
+    <p>Creating intuitive and beautiful user experiences for modern brands and startups.</p>
+    
+    <div class="profile-container">
+      <div class="profile-container">
+        <div class="bubble-animation">
+          <img src="c:\Users\SHREE RAM\OneDrive\ドキュメント\UINUX PORTFOLIO\craiyon_094934_transparent 2.png" alt="Profile Picture" class="profile-image" />
+          
+          <!-- Bubbles -->
+          <div class="bubble b1"></div>
+          <div class="bubble b2"></div>
+          <div class="bubble b3"></div>
+          <div class="bubble b4"></div>
+          <div class="bubble b5"></div>
+      
+
+        </div>
+      </div>
+      
+    
+  </div>
+</header>
+
+<section id="services">
+  <h2 class="section-title">My <span>Services</span></h2>
+  <div class="card-container">
+    <div class="glass-card" onclick="window.location.href='uiux.html'">
+      <img src="c:\Users\SHREE RAM\OneDrive\ドキュメント\UINUX PORTFOLIO\d8cbd0221537409.Y3JvcCwxNjE2LDEyNjQsMCww.png" alt="UI/UX Design" />
+      <h3>UI/UX Design</h3>
+      <p>Crafting user-friendly interfaces backed by strategy, usability, and modern design trends.</p>
+    </div>
+    <div class="glass-card" onclick="window.location.href='web.html'">
+      <img src="c:\Users\SHREE RAM\Downloads\Flux_Dev_Create_a_highly_detailed_modern_and_sleek_hero_sectio_3.jpg" alt="Web Development" />
+      <h3>Web Design</h3>
+      <p>Helping businesses shine online with thoughtful, custom web design</p>
+    </div>
+    <div class="glass-card" onclick="window.location.href='landing.html'">
+      <img src="c:\Users\SHREE RAM\OneDrive\画像\Screenshots\Screenshot 2025-04-24 154413.png" alt="Landing Pages" />
+      <h3>Landing Pages</h3>
+      <p>Pages that spark interest, tell a story, and convert visitors into customers.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">My <span>Projects</span></h2>
+  <div class="card-container">
+    <div class="glass-card" onclick="window.location.href='project1.html'">
+      <img src="c:\Users\SHREE RAM\OneDrive\ドキュメント\UINUX PORTFOLIO\WhatsApp Image 2025-04-24 at 15.53.22_9ca1a1fe.jpg" alt="Project 1" />
+      <h3>CareLink – Modern Healthcare UI</h3>
+      <p>Where clean design meets better care. CareLink reimagines the healthcare UI with empathy and function.</p>
+    </div>
+    <div class="glass-card" onclick="window.location.href='project2.html'">
+      <img src="c:\Users\SHREE RAM\OneDrive\ドキュメント\UINUX PORTFOLIO\WhatsApp Image 2025-04-24 at 15.52.40_c78b5e36.jpg" alt="Project 2" />
+      <h3>Testy Bites – Testy Pizza's</h3>
+      <p>Scroll, snack, and smile. A yummy UI for India's favorite homemade bites.</p>
+    </div>
+    <div class="glass-card" onclick="window.location.href='project3.html'">
+      <img src="c:\Users\SHREE RAM\OneDrive\画像\Screenshots\Screenshot 2025-04-24 182758.png" alt="Project 3" />
+      <h3>Healthy Meal planner</h3>
+      <p>A modern redesign of the meal palnner app that suggest your calary everyday and give you best meal paln.</p>
+      
+    </div>
+    <div class="glass-card" onclick="window.location.href='project3.html'">
+      <img src="c:\Users\SHREE RAM\OneDrive\ドキュメント\UINUX PORTFOLIO\Frame 9.png" alt="Project 4" />
+      <h3>Habitify – Productivity, Casestudy</h3>
+<p>A cleaner, more motivating habit tracker app redesigned for daily focus and flow.</p>
+
+    </div>
+    
+    <div class="glass-card" onclick="window.location.href='project3.html'">
+      <img src="c:\Users\SHREE RAM\OneDrive\画像\Screenshots\Screenshot 2025-04-24 162509.png" alt="Project 5" />
+      <h3>ElectroMart – Tech Shopping</h3>
+      <p>Cleaner, user experience for tech Lovers.</p>
+      
+    </div>
+    <div class="glass-card" onclick="window.location.href='project3.html'">
+      <img src="c:\Users\SHREE RAM\OneDrive\画像\Screenshots\Screenshot 2025-04-24 163946.png" alt="Project 6" />
+      <h3>CryptoBurn - Dashboard</h3>
+      <p>clean, user-friendly dashboard to monitor cryptocurrency performance with confidence.</p>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2 class="section-title">What <span>Clients Say</span></h2>
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <img src="c:\Users\SHREE RAM\OneDrive\ドキュメント\UINUX PORTFOLIO\1721961927951 1.png" alt="Client 1" />
+      <p><b>Viashu Patel</b></p>
+      <br>
+      <p>"Krish delivered exactly what I envisioned. The UI was clean and engaging!"</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="c:\Users\SHREE RAM\OneDrive\ドキュメント\UINUX PORTFOLIO\Screenshot 2025-03-29 110549 1.png" alt="Client 2" />
+      <p><b>Ridhhi Raval</b></p>
+      <br>
+      <p>"Excellent work ethic and communication. Highly recommended!"</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="c:\Users\SHREE RAM\OneDrive\ドキュメント\UINUX PORTFOLIO\1734613409516 1.png" alt="Client 3" />
+      <p><b>Sanjay Prajapati</b></p>
+      <br>
+      <p>"Amazing sense of design and details. I’m super happy with my website!"</p>
+    </div>
+    
+  </div>
+</section>
+
+<section id="Contact">
+  <div class="container">
+    <div class="left-panel">
+      <h1>Ready to Collaborate? <br>Let’s Talk!”</h1>
+      <p>Let's create something together ✌️</p>
+      <div class="email-box">
+        <img src="https://img.icons8.com/material-outlined/24/000000/new-post.png" alt="mail icon"/>
+        <a href="mailto:krishprajapati1309@gmail.com">krishprajapati1309@gmail.com</a>
+      </div>
+    </div>
+    <div class="right-panel">
+      <h2>Send a message🚀</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Full name*" required />
+        <input type="email" placeholder="Email address*" required />
+        <input type="text" placeholder="Subject" />
+        <textarea placeholder="Tell us more about your project*" required></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+  
+</section>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Message sent! We’ll get back to you soon 🚀");
+});
+
+</script>
+
+</body>
+</html>
